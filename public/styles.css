@@ -350,6 +350,128 @@ tbody tr:hover { background: var(--green-pale); }
 .toast.error { background: var(--danger); }
 @keyframes toast-in { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
+/* ---------- Landing page ---------- */
+
+.landing-page {
+  min-height: 100vh;
+  background: var(--ivory);
+}
+
+.landing-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  background: var(--green-dark);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.landing-nav-brand { display: flex; flex-direction: column; }
+.landing-nav-title { color: var(--gold); font-weight: 700; font-size: 17px; }
+.landing-nav-sub { font-size: 11px; color: rgba(255,255,255,0.75); }
+
+.landing-hero {
+  padding: 72px 48px 56px;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.landing-eyebrow {
+  display: inline-block;
+  background: var(--green-pale);
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.landing-hero h1 { font-size: 36px; line-height: 1.35; margin: 0 0 18px; font-weight: 700; }
+.landing-hero-sub { font-size: 15px; color: var(--text-secondary); line-height: 1.9; margin: 0 0 28px; }
+.landing-hero-actions { display: flex; gap: 12px; }
+.landing-hero-actions .btn { padding: 12px 26px; font-size: 14px; }
+
+.landing-section { padding: 48px 48px; max-width: 1100px; margin: 0 auto; }
+.landing-section h2 { text-align: center; font-size: 24px; margin: 0 0 8px; }
+.landing-section-sub { text-align: center; color: var(--text-secondary); font-size: 13px; max-width: 560px; margin: 0 auto 32px; line-height: 1.8; }
+.landing-section-alt { background: var(--green-pale); border-radius: 24px; }
+
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+.feature-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 22px;
+  box-shadow: var(--shadow-card);
+}
+.feature-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: var(--green-pale); display: flex; align-items: center; justify-content: center;
+  font-size: 20px; margin-bottom: 14px;
+}
+.feature-card h3 { margin: 0 0 8px; font-size: 15px; }
+.feature-card p { margin: 0; font-size: 13px; color: var(--text-secondary); line-height: 1.8; }
+
+.flow-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.flow-step { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; }
+.flow-step-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--green-dark); color: var(--white);
+  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;
+}
+.flow-step h4 { margin: 0 0 6px; font-size: 14px; }
+.flow-step p { margin: 0; font-size: 12px; color: var(--text-secondary); line-height: 1.8; }
+
+.callout {
+  margin-top: 32px;
+  background: var(--white);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--text-primary);
+}
+.callout strong { color: var(--green-dark); }
+
+.roles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 24px; }
+.role-chip {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.role-chip strong { font-size: 13px; color: var(--green-dark); }
+.role-chip span { font-size: 12px; color: var(--text-secondary); line-height: 1.7; }
+
+.landing-login-section { display: flex; justify-content: center; }
+.landing-login-section .login-card { box-shadow: var(--shadow-card); }
+
+.landing-footer {
+  text-align: center;
+  padding: 28px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .landing-nav { padding: 16px 20px; }
+  .landing-hero { padding: 48px 20px 40px; }
+  .landing-hero h1 { font-size: 27px; }
+  .landing-section { padding: 40px 20px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .flow-steps { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ---------- Login ---------- */
 
 .login-screen {

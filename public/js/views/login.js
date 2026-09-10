@@ -1,13 +1,10 @@
 import { el, clear } from '../helpers.js';
 import { api } from '../api.js';
 
-export function renderLogin(onSuccess) {
-  const app = document.getElementById('app');
-  clear(app);
-
+export function loginCard(onSuccess) {
   const usernameInput = el('input', { type: 'text', autocomplete: 'username', placeholder: 'اسم المستخدم' });
   const passwordInput = el('input', { type: 'password', autocomplete: 'current-password', placeholder: 'كلمة المرور' });
-  const errorBox = el('p', { class: 'field .error-text', style: 'color:#C94343;font-size:12px;min-height:16px;margin:0 0 8px;' });
+  const errorBox = el('p', { style: 'color:#C94343;font-size:12px;min-height:16px;margin:0 0 8px;' });
 
   const submit = async (e) => {
     e.preventDefault();
@@ -38,8 +35,8 @@ export function renderLogin(onSuccess) {
     el('button', { type: 'submit', class: 'btn btn-primary' }, 'تسجيل الدخول'),
   ]);
 
-  const card = el('div', { class: 'login-card' }, [
-    el('h1', {}, 'إحصائيات كأس الخليج'),
+  return el('div', { class: 'login-card', id: 'login' }, [
+    el('h1', {}, 'الدخول إلى النظام'),
     el('p', { class: 'sub' }, 'بوابة إدارة البطولات والمنتخبات واللاعبين'),
     form,
     el('div', { class: 'login-hint' }, [
@@ -51,6 +48,10 @@ export function renderLogin(onSuccess) {
       el('div', {}, 'viewer / viewer123 — مشاهد أو محلل'),
     ]),
   ]);
+}
 
-  app.appendChild(el('div', { class: 'login-screen' }, [card]));
+export function renderLogin(onSuccess) {
+  const app = document.getElementById('app');
+  clear(app);
+  app.appendChild(el('div', { class: 'login-screen' }, [loginCard(onSuccess)]));
 }

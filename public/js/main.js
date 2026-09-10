@@ -2,7 +2,7 @@ import { api } from './api.js';
 import { state } from './state.js';
 import { route, startRouter, currentPath, navigate } from './router.js';
 import { renderShell, highlightActiveNav } from './layout.js';
-import { renderLogin } from './views/login.js';
+import { renderLanding } from './views/landing.js';
 import { renderDashboard } from './views/dashboard.js';
 import { renderTournaments } from './views/tournaments.js';
 import { renderTournamentDetail } from './views/tournamentDetail.js';
@@ -45,7 +45,7 @@ async function init() {
     state.user = user;
     boot();
   } catch (_) {
-    renderLogin((user) => {
+    renderLanding((user) => {
       state.user = user;
       window.location.hash = '/dashboard';
       boot();
