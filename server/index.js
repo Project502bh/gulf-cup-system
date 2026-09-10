@@ -2,6 +2,7 @@ const path = require('node:path');
 const express = require('express');
 const session = require('express-session');
 
+const { runSeed } = require('./seed');
 const authRoutes = require('./routes/auth');
 const tournamentsRoutes = require('./routes/tournaments');
 const systemRoutes = require('./routes/system');
@@ -15,6 +16,10 @@ const usersRoutes = require('./routes/users');
 
 const app = express();
 const PORT = process.env.PORT || 4310;
+
+// Auto-seed demo data on first boot (no-op if data already exists) so a freshly
+// deployed instance with an empty/ephemeral disk works without manual setup.
+runSeed();
 
 app.use(express.json());
 app.use(session({
