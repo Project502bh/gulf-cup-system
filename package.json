@@ -1,0 +1,19 @@
+{
+  "name": "gulf-cup-system",
+  "version": "1.0.0",
+  "description": "نظام إدارة وإحصائيات بطولات كأس الخليج العربي",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "seed": "node server/seed.js"
+  },
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  }
+}
